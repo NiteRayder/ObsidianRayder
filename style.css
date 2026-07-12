@@ -323,3 +323,69 @@ footer {
     }
 
 }
+/* Content Carousel */
+
+.content-carousel {
+    margin-top: 40px;
+}
+
+
+.carousel {
+    display: flex;
+    gap: 25px;
+    overflow-x: auto;
+    padding: 20px 5px;
+    scroll-behavior: smooth;
+}
+
+
+.carousel::-webkit-scrollbar {
+    height: 8px;
+}
+
+
+.carousel::-webkit-scrollbar-track {
+    background: #0b0b12;
+    border-radius: 10px;
+}
+
+
+.carousel::-webkit-scrollbar-thumb {
+    background: #5865f2;
+    border-radius: 10px;
+}
+
+
+.content-card {
+    min-width: 300px;
+    background: #181825;
+    padding: 25px;
+    border-radius: 20px;
+    flex-shrink: 0;
+    transition: 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+
+.content-card:hover {
+    transform: translateY(-8px);
+    background: #202035;
+}
+
+
+.content-card img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+
+.content-card h3 {
+    margin-top: 20px;
+}
+
+
+.content-card a {
+    margin-top: 15px;
+}
