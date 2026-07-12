@@ -21,6 +21,98 @@ header {
     text-align: center;
     border-bottom: 1px solid rgba(255,255,255,0.08);
 }
+/* Contact Form */
+
+
+.contact-section {
+
+max-width:800px;
+margin:auto;
+
+}
+
+
+
+.contact-form {
+
+display:flex;
+flex-direction:column;
+gap:15px;
+
+}
+
+
+
+.contact-form label {
+
+font-weight:700;
+color:#ffffff;
+
+}
+
+
+
+.contact-form input,
+.contact-form textarea {
+
+background:#10101a;
+
+border:1px solid rgba(255,255,255,.1);
+
+border-radius:12px;
+
+padding:15px;
+
+font-size:1rem;
+
+color:white;
+
+}
+
+
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+
+outline:none;
+
+border-color:#5865f2;
+
+}
+
+
+
+.contact-form button {
+
+background:#5865f2;
+
+border:none;
+
+color:white;
+
+padding:15px;
+
+border-radius:12px;
+
+font-size:1rem;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+
+
+.contact-form button:hover {
+
+background:#7289da;
+
+transform:translateY(-2px);
+
+}
 
 
 header h1 {
