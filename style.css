@@ -102,6 +102,19 @@ main { width: min(var(--max), calc(100% - 2rem)); margin: 0 auto; padding: 4rem 
 .panel { display: flex; align-items: center; justify-content: space-between; gap: 2rem; margin-top: 1rem; padding: 2.2rem; }
 .spotlight p { max-width: 720px; margin-bottom: 0; }
 
+.discord-widget { margin-top: 1rem; align-items: center; }
+.discord-widget-main { flex: 1; min-width: 0; }
+.discord-widget-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; }
+.discord-widget h2 { margin: 0 0 .5rem; font-size: clamp(1.8rem, 4vw, 2.6rem); letter-spacing: -.04em; }
+.discord-widget p:not(.eyebrow) { margin: 0; color: var(--muted); }
+.discord-status { display: inline-flex; align-items: center; gap: .45rem; color: var(--muted); font-size: .82rem; white-space: nowrap; }
+.status-dot { width: .55rem; height: .55rem; border-radius: 50%; background: var(--muted-2); box-shadow: 0 0 0 4px rgba(255,255,255,.03); }
+.discord-status.online .status-dot { background: #6ee7a0; box-shadow: 0 0 0 4px rgba(110,231,160,.1); }
+.discord-stats { display: flex; gap: 1.5rem; margin-top: 1.25rem; }
+.discord-stats div { display: grid; gap: .15rem; }
+.discord-stats strong { font-size: 1.4rem; }
+.discord-stats span { color: var(--muted-2); font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; }
+
 .page-hero { margin-bottom: 1rem; padding: 3rem 0 1rem; }
 .page-hero h1 { margin: 0 0 .75rem; font-size: clamp(2.7rem, 7vw, 5rem); line-height: .95; letter-spacing: -.06em; }
 .page-hero p { color: var(--muted); max-width: 760px; }
