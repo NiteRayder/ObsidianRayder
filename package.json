@@ -1,0 +1,17 @@
+{
+  "name": "obsidianrayder",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "NiteRayder's creator portfolio, prepared for Cloudflare Workers and R2.",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "devDependencies": {
+    "vitest": "^3.2.4",
+    "wrangler": "^4.30.0"
+  }
+}
