@@ -53,7 +53,7 @@ Upload a `manifest.json` object at the root of the R2 bucket. Example:
 }
 ```
 
-Upload each image to the exact key referenced in the manifest. Supported content types are AVIF, JPEG, PNG, GIF, WebP, and SVG. Only objects referenced by the manifest are served by the media route. Use only trusted SVG files because SVG can contain active content.
+Upload each image to the exact key referenced in the manifest. Supported content types are AVIF, JPEG, PNG, GIF, and WebP. Only objects referenced by the manifest are served by the media route.
 
 The browser calls `GET /api/gallery`; image URLs use `GET /media/{key}`. R2 credentials are never exposed to the browser, and the Worker does not provide public uploads.
 
