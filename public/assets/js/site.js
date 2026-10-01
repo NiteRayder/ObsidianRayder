@@ -73,7 +73,7 @@
       }
 
       const values = new FormData(form);
-      const subject = encodeURIComponent(String(values.get("subject") || "ObsidianRayder inquiry").trim());
+      const subject = encodeURIComponent(String(values.get("subject") || "NiteRayder Central inquiry").trim());
       const message = [
         "Name: " + String(values.get("name") || "").trim(),
         "Reply email: " + String(values.get("email") || "").trim(),
