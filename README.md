@@ -1,6 +1,6 @@
-# ObsidianRayder
+# NiteRayder Central
 
-ObsidianRayder is the creator portfolio and creative hub for **NiteRayder**, bringing together artwork, writing, creator content, and software projects.
+NiteRayder Central is the creator portfolio and creative hub for **NiteRayder**, bringing together artwork, writing, creator content, and software projects.
 
 ## Stack
 
@@ -25,14 +25,14 @@ The local Worker uses the R2 binding declared in `wrangler.toml`. Create the con
 
 ## Cloudflare setup
 
-1. Create and secure the new Cloudflare account.
+1. Use the connected Cloudflare account and confirm it is the intended account.
 2. Create an R2 bucket named `obsidianrayder-gallery`, or update `bucket_name` in `wrangler.toml`.
 3. Keep the bucket private. The Worker reads it through the `GALLERY_BUCKET` binding.
 4. Wrangler configures the `ASSETS` binding for the `public/` directory.
-5. Choose and configure the production hostname after the new account is ready.
+5. Choose and configure the production hostname before deployment.
 6. Run tests and preview the app before deploying.
 
-**This branch has not been deployed.** Do not run `npm run deploy` until the new account, R2 bucket, and hostname are ready and deployment is explicitly approved.
+**This branch has not been deployed.** Do not run `npm run deploy` until the connected account, R2 bucket, and hostname are ready and deployment is explicitly approved.
 
 ## R2 gallery manifest
 
