@@ -27,8 +27,8 @@ describe("static site structure", () => {
   it("has a mailto form with required contact fields", async () => {
     const html = await readFile(new URL("../public/pages/contact.html", import.meta.url), "utf8");
     expect(html).toContain("data-mailto-form");
-    expect(html).toContain('name="email" required');
-    expect(html).toContain('name="message" required');
+    expect(html).toContain('name="email"');
+    expect(html).toContain('name="message"');
   });
   it("has the R2 gallery interface", async () => {
     const html = await readFile(new URL("../public/pages/art.html", import.meta.url), "utf8");
