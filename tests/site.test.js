@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { readFile } from "node:fs/promises";
 
 const pages = [
-  "public/index.html", "public/pages/about.html", "public/pages/art.html",
+  "public/index.html", "public/inner-circle.html", "public/pages/about.html", "public/pages/art.html",
   "public/pages/writing.html", "public/pages/content.html",
   "public/pages/development.html", "public/pages/contact.html", "public/404.html",
 ];
