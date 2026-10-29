@@ -13,7 +13,7 @@ The public RAYDER hub and Inner Circle preview are in progress. The Inner Circle
 - A local JSON manifest for the artwork gallery
 - Vitest for automated tests
 
-This repository has no Cloudflare Workers, Wrangler configuration, or R2 dependency.
+This is a provider-neutral static site with no vendor-specific runtime.
 
 ## Local development
 
