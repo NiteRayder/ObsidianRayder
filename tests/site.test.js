@@ -18,6 +18,11 @@ describe("static site structure", () => {
       }
     }
   });
+  it("makes membership preview limitations explicit", async () => {
+    const html = await readFile(new URL("../public/inner-circle.html", import.meta.url), "utf8");
+    expect(html).toContain("Preview only. Membership access is not live.");
+    expect(html).toContain("server-side");
+  });
   it("uses current studio branding", async () => {
     const html = await readFile(new URL("../public/pages/development.html", import.meta.url), "utf8");
     expect(html).toContain("Horizon Forge Studios");
