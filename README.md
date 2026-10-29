@@ -1,6 +1,10 @@
-# NiteRayder Central
+# RAYDER Creator Hub
 
-NiteRayder Central is the creator portfolio and creative hub for **NiteRayder**, bringing together artwork, writing, creator content, and software projects.
+RAYDER is the creator hub for **NiteRayder**, bringing together artwork, writing, creator content, and software projects.
+
+## Current status
+
+The RAYDER public hub and Inner Circle preview are in progress. The Inner Circle is a visual preview only; account authentication, PayPal subscriptions, webhook verification, and protected media delivery are not implemented. Do not publish member-only media until these are live and tested.
 
 ## Stack
 
@@ -73,7 +77,7 @@ The contact form uses a mailto fallback. Before publishing, replace `REPLACE_WIT
 - Inner Circle: members-area preview only; server-side authentication and payment verification are not implemented yet
 - Existing supporting pages: About, Art, Writing, Content, Development, and Contact
 
-The development page uses Horizon Forge Studios and Silverline Network branding. Until individual repository URLs are verified, project cards link to the NiteRayder GitHub profile.
+The development page uses Horizon Forge Studios and Silverline Network branding. RAYDER is the public-facing creator hub brand. Until individual repository URLs are verified, project cards link to the NiteRayder GitHub profile.
 
 ## Tests
 
