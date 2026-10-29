@@ -1,42 +1,40 @@
-# NiteRayder Central
+# RAYDER Creator Hub
 
-NiteRayder Central is the creator portfolio and creative hub for **NiteRayder**, bringing together artwork, writing, creator content, and software projects.
+RAYDER is the creator hub for **NiteRayder**, bringing together artwork, writing, creator content, and software projects.
+
+## Current status
+
+The public RAYDER hub and Inner Circle preview are in progress. The Inner Circle is a visual preview only; account authentication, PayPal subscriptions, webhook verification, and protected media delivery are not implemented. Do not publish member-only media until these are live and tested.
 
 ## Stack
 
 - HTML5, CSS, and vanilla JavaScript
-- Cloudflare Workers for request handling
-- Workers Static Assets for website files
-- Cloudflare R2 for gallery images and metadata
-- Wrangler for local development and deployment
+- Static files that can be hosted by any ordinary static-site host
+- A local JSON manifest for the artwork gallery
 - Vitest for automated tests
+
+This is a provider-neutral static site with no vendor-specific runtime.
 
 ## Local development
 
-Requirements: Node.js 20 or newer and npm.
+Requirements: Node.js 20 or newer and npm. Install dependencies and run the test suite:
 
 ```sh
 npm install
 npm test
-npm run dev
 ```
 
-The local Worker uses the R2 binding declared in `wrangler.toml`. Create the configured bucket in the Cloudflare account used for development, or use Wrangler's local R2 simulation where supported.
+To preview the static site locally, run this from the repository root:
 
-## Cloudflare setup
+```sh
+python -m http.server 8000 --directory public
+```
 
-1. Use the connected Cloudflare account and confirm it is the intended account.
-2. Create an R2 bucket named `obsidianrayder-gallery`, or update `bucket_name` in `wrangler.toml`.
-3. Keep the bucket private. The Worker reads it through the `GALLERY_BUCKET` binding.
-4. Wrangler configures the `ASSETS` binding for the `public/` directory.
-5. Choose and configure the production hostname before deployment.
-6. Run tests and preview the app before deploying.
+Then open `http://localhost:8000`. Any static web server can serve the `public/` directory; no build or hosting-provider runtime is required.
 
-**This branch has not been deployed.** Do not run `npm run deploy` until the connected account, R2 bucket, and hostname are ready and deployment is explicitly approved.
+## Artwork gallery
 
-## R2 gallery manifest
-
-Upload a `manifest.json` object at the root of the R2 bucket. Example:
+Place image files inside `public/gallery/` and add their metadata to `public/gallery/manifest.json`. Example:
 
 ```json
 {
@@ -53,9 +51,7 @@ Upload a `manifest.json` object at the root of the R2 bucket. Example:
 }
 ```
 
-Upload each image to the exact key referenced in the manifest. Supported content types are AVIF, JPEG, PNG, GIF, and WebP. Only objects referenced by the manifest are served by the media route.
-
-The browser calls `GET /api/gallery`; image URLs use `GET /media/{key}`. R2 credentials are never exposed to the browser, and the Worker does not provide public uploads.
+For that example, place the image at `public/gallery/artwork/example.webp`. Supported image formats depend on the browser; WebP, PNG, JPEG, and AVIF are recommended. The gallery reads the public manifest and loads images as ordinary static files. Do not put private/member-only media in this folder.
 
 ## Contact form
 
@@ -63,15 +59,17 @@ The contact form uses a mailto fallback. Before publishing, replace `REPLACE_WIT
 
 ## Site sections
 
-- Home
-- About
-- Art
-- Writing
-- Content
-- Development
-- Contact
+- Rayder HQ: public creator hub and launch overview
+- The Rayder File: creator profile and project overview
+- Transmissions: free public updates and devlogs
+- Signals: social and channel directory
+- Join the Raid: proposed Super Rayder and VIR membership tiers (not active)
+- Intel: FAQ and launch disclosures
+- Comms: contact form using a mailto fallback
+- Inner Circle: members-area preview only; server-side authentication and payment verification are not implemented yet
+- Existing supporting pages: About, Art, Writing, Content, Development, and Contact
 
-The development page uses Horizon Forge Studios and Silverline Network branding. Until individual repository URLs are verified, project cards link to the NiteRayder GitHub profile.
+The development page uses Horizon Forge Studios and Silverline Network branding. RAYDER is the public-facing creator hub brand. Until individual repository URLs are verified, project cards link to the NiteRayder GitHub profile.
 
 ## Tests
 
@@ -79,27 +77,24 @@ The development page uses Horizon Forge Studios and Silverline Network branding.
 npm test
 ```
 
-The tests cover Worker routing, gallery metadata, allowlisted R2 media, unsupported methods, not-found behavior, and key page structure.
+The tests cover page structure and the Inner Circle preview's launch limitations.
 
 ## Structure
 
 ```
 .
-├── src/
-│   ├── index.js
-│   └── routes/
-│       ├── gallery.js
-│       └── media.js
 ├── public/
 │   ├── index.html
+│   ├── inner-circle.html
 │   ├── 404.html
+│   ├── gallery/manifest.json
 │   ├── assets/
 │   │   ├── css/site.css
 │   │   └── js/site.js
 │   └── pages/
 ├── tests/
 ├── package.json
-└── wrangler.toml
+└── README.md
 ```
 
 Once the production hostname is selected, add/update the sitemap and robots.txt with absolute production URLs.

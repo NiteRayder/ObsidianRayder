@@ -73,7 +73,7 @@
       }
 
       const values = new FormData(form);
-      const subject = encodeURIComponent(String(values.get("subject") || "NiteRayder Central inquiry").trim());
+      const subject = encodeURIComponent(String(values.get("subject") || "RAYDER inquiry").trim());
       const message = [
         "Name: " + String(values.get("name") || "").trim(),
         "Reply email: " + String(values.get("email") || "").trim(),
@@ -173,13 +173,13 @@
     });
     dialog.addEventListener("close", () => lightboxImage.removeAttribute("src"));
 
-    fetch("/api/gallery", { headers: { Accept: "application/json" } })
+    fetch("../gallery/manifest.json", { headers: { Accept: "application/json" } })
       .then((response) => {
         if (!response.ok) throw new Error("Gallery request failed");
         return response.json();
       })
       .then((data) => {
-        items = Array.isArray(data.items) ? data.items : [];
+        items = Array.isArray(data.items) ? data.items.filter((item) => item && typeof item.key === "string" && !item.key.startsWith("/") && !item.key.split("/").some((part) => part === "..")).map((item) => ({ ...item, url: "../gallery/" + item.key })) : [];
         renderFilters();
         renderItems();
       })
