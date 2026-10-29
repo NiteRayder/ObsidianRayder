@@ -63,13 +63,15 @@ The contact form uses a mailto fallback. Before publishing, replace `REPLACE_WIT
 
 ## Site sections
 
-- Home
-- About
-- Art
-- Writing
-- Content
-- Development
-- Contact
+- Rayder HQ: public creator hub and launch overview
+- The Rayder File: creator profile and project overview
+- Transmissions: free public updates and devlogs
+- Signals: social and channel directory
+- Join the Raid: proposed Super Rayder and VIR membership tiers (not active)
+- Intel: FAQ and launch disclosures
+- Comms: contact form using a mailto fallback
+- Inner Circle: members-area preview only; server-side authentication and payment verification are not implemented yet
+- Existing supporting pages: About, Art, Writing, Content, Development, and Contact
 
 The development page uses Horizon Forge Studios and Silverline Network branding. Until individual repository URLs are verified, project cards link to the NiteRayder GitHub profile.
 
